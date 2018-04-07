@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1170px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+.header__stripe {
+  width: 100%;
+  height: 42px;
+  background: #180606;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .header__stripe {
+    display: none;
+  }
+}
+
+.header__stripe p {
+  color: #fff;
+  float: left;
+  padding: 13px 80px 13px 0px;
+  margin: 0;
+  font-family: "Varela Round", sans-serif;
+  color: #969393;
+  font-size: 14px;
+}
+
+.header__stripe .header__stripe-search {
+  width: 250px;
+  height: 42px;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #524F4F;
+  border: 0px;
+  float: right;
+}
+
+.header__stripe:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.logo {
+  width: 90px;
+  height: 50px;
+  background: url(../img/logo.jpg);
+  background-size: cover;
+  color: transparent;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    grid-column: 1 / 13;
+    margin: 0 auto;
+  }
+}
+
+.header__nav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.header__nav .navigation {
+  padding: 10px 0px 10px 0px;
+  grid-column: 4 / 13;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .header__nav .navigation {
+    grid-row: 2;
+    grid-column: 1 / 13;
+  }
+}
+
+.header__nav .navigation li {
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+  display: inline-block;
+  border-left: 1px solid black;
+}
+
+.header__nav .navigation li:first-child {
+  border-left: 0px solid black;
+}
+
+.header__nav .navigation li:last-child {
+  background: #63b695;
+  border: 0px;
+  padding: 11px;
+}
+
+.header__nav .navigation li a {
+  padding: 0px 10px 0px 10px;
+  color: #252323;
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+  text-transform: uppercase;
+  text-aling: center;
+  transition: .2s ease-in-out;
+}
+
+.header__nav .navigation li a:hover {
+  font-weight: bold;
+  transition: .3s ease-in-out;
+}
+
+.header__nav .navigation li .donate {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.front {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/children.jpg) center no-repeat;
+  background-size: cover;
+  position: relative;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+.front:before {
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .front:before {
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .front {
+    height: 50vh;
+  }
+}
+
+.front .front__text {
+  margin: auto;
+  left: 0;
+  top: 25%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+.front .front__text p {
+  margin: 0 auto;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  width: 10%;
+  background: #ffffff;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .front .front__text p {
+    width: 60%;
+  }
+}
+
+.front .front__text h1 {
+  margin: 30px 0px 0px 0px;
+  text-transform: uppercase;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 6em;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .front .front__text h1 {
+    font-size: 2em;
+  }
+}
+
+.front .front__text h2 {
+  margin: 0px 0px 100px 0px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: "Varela Round", sans-serif;
+  color: #ffffff;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .front .front__text h2 {
+    font-size: 0.8em;
+    margin: 0px 0px 50px 0px;
+  }
+}
+
+.front .front__text a {
+  color: #ffffff;
+  font-family: "Varela Round", sans-serif;
+  padding: 10px;
+  margin: 0 auto;
+  width: 5%;
+  background: #63b695;
+  /* Iphone 5 */
+  /* Portrait phones and smaller */
+}
+
+@media only screen and (max-width: 600px) {
+  .front .front__text a {
+    width: 40%;
+  }
+}

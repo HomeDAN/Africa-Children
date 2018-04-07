@@ -1,0 +1,224 @@
+// @font-face
+// 	font-family: "Exo2.0-Thin"
+// 	src: url("../fonts/Exo2.0-Thin.otf")
+// @font-face
+// 	font-family: "San Thin"
+// 	src: url("../fonts/SF-UI-Display-Thin.otf")
+
+// @font-face
+// 	font-family: "San Light"
+// 	src: url("../fonts/SF-UI-Display-Light.otf")
+
+
+@mixin respond-to($media)
+	/* Iphone 5 */
+	@if $media == small 
+		@media only screen and (max-width: 400px)
+			@content
+
+	/* Portrait phones and smaller */
+	@if $media == medium
+		@media only screen and (max-width: 600px)
+			@content
+
+	/* Landscape phones and portrait tablets */
+	@else if $media == large
+		@media only screen and (max-width: 800px)
+			@content
+	
+	/* Laptops */
+	@else if $media == laptop
+		@media only screen and (min-width: 801px)
+			@content
+
+//------------------------
+//			FONTS
+//------------------------
+
+$font: 'Varela Round', sans-serif;
+
+//------------------------
+//			COLORS
+//------------------------
+
+$lblack: #180606
+$grey: #969393
+$nav: #252323
+$white: #ffffff
+$green: #63b695
+
+//------------------------
+//			MIXINS
+//------------------------
+
+
+
+
+
+//------------------------
+//			RESETS
+//------------------------
+
+body
+	margin: 0
+	padding: 0
+
+
+.container
+	margin: 0 auto
+	width: 100%
+	max-width: 1170px
+
+ul
+	list-style: none
+
+a
+	text-decoration: none
+	display: block
+
+
+
+//------------------------
+//			CONTENT
+//------------------------
+
+
+.header__stripe
+	width: 100%
+	height: 42px
+	background: $lblack
+	@include respond-to(medium)
+		display: none
+	p
+		color: #fff
+		float: left
+		padding: 13px 80px 13px 0px
+		margin: 0
+		font-family: $font
+		color: $grey
+		font-size: 14px
+	.header__stripe-search
+		width: 250px
+		height: 42px
+		margin: 0
+		padding: 10px
+		box-sizing: border-box
+		background: #524F4F
+		border: 0px
+		float: right
+	&:before
+		content: ""
+		display: block
+		clear: both
+
+.logo
+	width: 90px
+	height: 50px
+	background: url(../img/logo.jpg)
+	background-size: cover
+	color: transparent
+	@include respond-to(medium)
+		grid-column: 1 / 13
+		margin: 0 auto
+
+
+.header__nav
+	width: 100%
+	display: grid
+	grid-template-columns: repeat(12, 1fr)
+
+	.navigation
+		padding: 10px 0px 10px 0px
+		grid-column: 4 / 13
+		@include respond-to(medium)
+			grid-row: 2
+			grid-column: 1 / 13
+		li
+			padding: 0px 5px 0px 5px
+			margin: 0px
+			display: inline-block
+			border-left: 1px solid black
+			&:first-child
+				border-left: 0px solid black
+			&:last-child
+				background: $green
+				border: 0px
+				padding: 11px
+				
+			a
+				padding: 0px 10px 0px 10px
+				color: $nav
+				text-align: center
+				font-family: $font
+				text-transform: uppercase
+				text-aling: center
+				transition: .2s ease-in-out
+				&:hover
+					font-weight: bold
+					transition: .3s ease-in-out
+			.donate
+				color: $white
+				font-weight: bold
+
+.front
+	width: 100%
+	height: 100vh
+	background: url(../img/children.jpg) center no-repeat
+	background-size: cover
+	position: relative
+	&:before
+		top: 0
+		left: 0
+		content: ""
+		display: block
+		width: 100%
+		height: 100vh
+		background: rgba(0,0,0,.5)
+		@include respond-to(medium)
+			height: 50vh
+	@include respond-to(medium)
+		height: 50vh
+	.front__text
+		margin: auto
+		left: 0
+		top: 25%
+		width: 100%
+		position: absolute
+		text-align: center
+		p
+			margin: 0 auto
+			padding: 10px
+			text-transform: uppercase
+			font-family: $font
+			font-weight: bold
+			width: 10%
+			background: $white
+			@include respond-to(medium)
+				width: 60%
+		h1
+			margin: 30px 0px 0px 0px
+			text-transform: uppercase
+			font-family: $font
+			font-weight: bold
+			color: $white
+			font-size: 6em
+			@include respond-to(medium)
+				font-size: 2em
+		h2
+			margin: 0px 0px 100px 0px
+			font-size: 1.5em
+			text-transform: uppercase
+			font-family: $font
+			color: $white
+			@include respond-to(medium)
+				font-size: 0.8em
+				margin: 0px 0px 50px 0px
+		a
+			color: $white
+			font-family: $font
+			padding: 10px
+			margin: 0 auto
+			width: 5%
+			background: $green
+			@include respond-to(medium)
+				width: 40%
