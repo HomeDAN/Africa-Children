@@ -22,7 +22,12 @@ a {
   width: 100%;
   height: 42px;
   background: #180606;
-  /* Landscape phones and portrait tablets */
+}
+
+@media only screen and (max-width: 600px) {
+  .header__stripe {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -90,8 +95,6 @@ a {
   background-size: cover;
   color: transparent;
   position: relative;
-  /* Landscape phones and portrait tablets */
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -117,8 +120,6 @@ a {
   position: absolute;
   top: 20px;
   left: 90vw;
-  /* Landscape phones and portrait tablets */
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -142,8 +143,6 @@ a {
 .header__nav .navigation {
   padding: 10px 0px 10px 0px;
   grid-column: 4 / 13;
-  /* Landscape phones and portrait tablets */
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -170,7 +169,6 @@ a {
   position: relative;
   display: inline-block;
   border-left: 1px solid black;
-  /* Landscape phones and portrait tablets */
 }
 
 .header__nav .navigation li:first-child {
@@ -181,8 +179,6 @@ a {
   background: #63b695;
   border: 0px;
   padding: 11px;
-  /* Landscape phones and portrait tablets */
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -229,7 +225,6 @@ a {
 .header__nav .navigation li .donate {
   color: #ffffff;
   font-weight: bold;
-  /* Landscape phones and portrait tablets */
 }
 
 .front {
@@ -238,7 +233,6 @@ a {
   background: url(../img/children.jpg) center no-repeat;
   background-size: cover;
   position: relative;
-  /* Landscape phones and portrait tablets */
 }
 
 .front:before {
@@ -249,7 +243,6 @@ a {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -290,7 +283,6 @@ a {
   font-weight: bold;
   color: #ffffff;
   font-size: 6em;
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -305,7 +297,6 @@ a {
   text-transform: uppercase;
   font-family: "Varela Round", sans-serif;
   color: #ffffff;
-  /* Landscape phones and portrait tablets */
 }
 
 @media only screen and (max-width: 800px) {
@@ -322,4 +313,94 @@ a {
   margin: 0 auto;
   width: 150px;
   background: #63b695;
+}
+
+.levels {
+  width: 100%;
+  background: #f7f7f7;
+}
+
+.levels__types {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.levels__types .levels__types-blocks {
+  top: -120px;
+  padding: 30px;
+  position: relative;
+}
+
+.levels__types .levels__types-blocks:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(99, 182, 149, 0.4);
+}
+
+.levels__types .levels__types-blocks:nth-child(1) {
+  background: url(../img/people-1.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.levels__types .levels__types-blocks:nth-child(2) {
+  background: url(../img/people-2.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.levels__types .levels__types-blocks:nth-child(3) {
+  background: url(../img/people-3.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.levels__types .levels__types-blocks h1, .levels__types .levels__types-blocks h2, .levels__types .levels__types-blocks p, .levels__types .levels__types-blocks a {
+  position: relative;
+  z-index: 1;
+}
+
+.levels__types .levels__types-blocks h1 {
+  margin: 10px 30px 0px 30px;
+  padding: 0;
+  font-size: 8em;
+  font-family: "Varela Round", sans-serif;
+  color: #ffffff;
+}
+
+.levels__types .levels__types-blocks h2 {
+  margin: 0px 30px 0px 30px;
+  padding: 0;
+  font-size: 3em;
+  font-family: "Varela Round", sans-serif;
+  color: #ffffff;
+}
+
+.levels__types .levels__types-blocks p {
+  margin: 10px 30px 20px 30px;
+  padding: 0;
+  font-size: 1.5em;
+  font-family: "Varela Round", sans-serif;
+  color: #ffffff;
+}
+
+.levels__types .levels__types-blocks a {
+  float: right;
+  color: #ffffff;
+  margin: 30px;
+  padding: 10px 30px 0px 30px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.levels__numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.levels__numbers .levels__numbers-blocks {
+  padding: 10px;
+  background: red;
 }

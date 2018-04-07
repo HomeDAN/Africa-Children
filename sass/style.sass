@@ -11,12 +11,12 @@
 
 
 @mixin respond-to($media)
-	/* Iphone 5 */
-	@if $media == small 
-		@media only screen and (max-width: 400px)
-			@content
+	// /* Iphone 5 */
+	// @if $media == small 
+	// 	@media only screen and (max-width: 400px)
+	// 		@content
 
-	/* Portrait phones and smaller */
+	// Portrait phones and smaller
 	@if $media == medium
 		@media only screen and (max-width: 600px)
 			@content
@@ -29,6 +29,10 @@
 	/* Laptops */
 	@else if $media == laptop
 		@media only screen and (min-width: 801px)
+			@content
+
+	@else if $media == ipad
+		@media only screen and (min-width: 801px) and (max-width: 1170px)
 			@content
 
 //------------------------
@@ -46,6 +50,8 @@ $grey: #969393
 $nav: #252323
 $white: #ffffff
 $green: #63b695
+$greenrgba: rgba(99, 182, 149, .4)
+$lightgrey: #f7f7f7
 
 //------------------------
 //			MIXINS
@@ -89,6 +95,8 @@ a
 	background: $lblack
 	@include respond-to(medium)
 		display: none
+	@include respond-to(large)
+		display: none
 	p
 		color: #fff
 		float: left
@@ -97,6 +105,30 @@ a
 		font-family: $font
 		color: $grey
 		font-size: 14px
+		text-indent: 40px
+		position: relative
+		text-transform: uppercase
+		&:nth-child(1)
+			&::after
+				content: ""
+				position: absolute
+				width: 32px
+				height: 32px
+				left: 0
+				top: 8px
+				background: url(../img/mail.png)no-repeat
+				background-size: 24px 24px
+		&::after
+			content: ""
+			position: absolute
+			width: 24px
+			height: 24px
+			left: 0
+			top: 8px
+			background: url(../img/phone.png)no-repeat
+			background-size: 24px 24px
+		
+
 	.header__stripe-search
 		width: 250px
 		height: 42px
@@ -117,9 +149,27 @@ a
 	background: url(../img/logo.jpg)
 	background-size: cover
 	color: transparent
-	@include respond-to(medium)
+	position: relative
+	@include respond-to(large)
 		grid-column: 1 / 13
-		margin: 0 auto
+		margin: 20px
+	@include respond-to(ipad)
+		grid-column: 6/8
+		width: 160px
+		height: 85px
+
+.menu
+	width: 50px
+	height: 50px
+	background: url(../img/menu.png) center no-repeat
+	background-size: 32px 32px
+	position: absolute
+	top: 20px
+	left: 90vw
+	@include respond-to(large)
+		left: 82vw
+	@include respond-to(laptop)
+		display: none
 
 
 .header__nav
@@ -128,14 +178,24 @@ a
 	grid-template-columns: repeat(12, 1fr)
 
 	.navigation
+		// width: 90%
 		padding: 10px 0px 10px 0px
 		grid-column: 4 / 13
-		@include respond-to(medium)
+		@include respond-to(large)
 			grid-row: 2
 			grid-column: 1 / 13
+			margin: 0
+			padding: 0
+		@include respond-to(ipad)
+			padding: 10px 0 60px 0
+			margin: 0 auto
+			grid-row: 3
+			grid-column: 1 / 13
+
 		li
 			padding: 0px 5px 0px 5px
 			margin: 0px
+			position: relative
 			display: inline-block
 			border-left: 1px solid black
 			&:first-child
@@ -144,7 +204,20 @@ a
 				background: $green
 				border: 0px
 				padding: 11px
-				
+				@include respond-to(large)
+					width: 100%
+					padding: 10px 0 10px 0
+					margin: 15px 0 0 0
+				@include respond-to(ipad)
+					width: 250px
+					position: absolute
+					left: 37%
+					top: 217px
+			@include respond-to(large)
+				width: 100%
+				border: 0
+				padding: 15px 0 0 0
+				margin: 0 auto
 			a
 				padding: 0px 10px 0px 10px
 				color: $nav
@@ -156,10 +229,12 @@ a
 				&:hover
 					font-weight: bold
 					transition: .3s ease-in-out
+
 			.donate
 				color: $white
 				font-weight: bold
-
+				@include respond-to(ipad)
+					
 .front
 	width: 100%
 	height: 100vh
@@ -174,10 +249,10 @@ a
 		width: 100%
 		height: 100vh
 		background: rgba(0,0,0,.5)
-		@include respond-to(medium)
-			height: 50vh
-	@include respond-to(medium)
-		height: 50vh
+		@include respond-to(large)
+			height: 90vh
+	@include respond-to(large)
+		height: 90vh
 	.front__text
 		margin: auto
 		left: 0
@@ -191,10 +266,8 @@ a
 			text-transform: uppercase
 			font-family: $font
 			font-weight: bold
-			width: 10%
+			width: 250px
 			background: $white
-			@include respond-to(medium)
-				width: 60%
 		h1
 			margin: 30px 0px 0px 0px
 			text-transform: uppercase
@@ -202,23 +275,92 @@ a
 			font-weight: bold
 			color: $white
 			font-size: 6em
-			@include respond-to(medium)
+			@include respond-to(large)
 				font-size: 2em
 		h2
-			margin: 0px 0px 100px 0px
+			margin: 0px 0px 70px 0px
 			font-size: 1.5em
 			text-transform: uppercase
 			font-family: $font
 			color: $white
-			@include respond-to(medium)
+			@include respond-to(large)
 				font-size: 0.8em
-				margin: 0px 0px 50px 0px
+				margin: 0px 0px 30px 0px
 		a
 			color: $white
 			font-family: $font
 			padding: 10px
 			margin: 0 auto
-			width: 5%
+			width: 150px
 			background: $green
-			@include respond-to(medium)
-				width: 40%
+
+//------------------------
+//			LEVELS
+//------------------------
+
+.levels
+	width: 100%
+
+	background: $lightgrey
+
+.levels__types
+	position: relative
+	display: grid
+	grid-template-columns: repeat(3, 1fr);
+	.levels__types-blocks
+		top: -120px
+		padding: 30px
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			display: block
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: $greenrgba
+
+		&:nth-child(1)
+			background: url(../img/people-1.jpg) center no-repeat
+			background-size: cover
+		&:nth-child(2)
+			background: url(../img/people-2.jpg) center no-repeat
+			background-size: cover
+		&:nth-child(3)
+			background: url(../img/people-3.jpg) center no-repeat
+			background-size: cover
+		h1,h2,p,a
+			position: relative
+			z-index: 1
+		h1
+			margin: 10px 30px 0px 30px
+			padding: 0
+			font-size: 8em
+			font-family: $font
+			color: $white
+		h2
+			margin: 0px 30px 0px 30px
+			padding: 0
+			font-size: 3em
+			font-family: $font
+			color: $white
+		p
+			margin: 10px 30px 20px 30px
+			padding: 0
+			font-size: 1.5em
+			font-family: $font
+			color: $white
+		a
+			float: right
+			color: $white
+			margin: 30px
+			padding: 10px 30px 0px 30px
+			border-bottom: 1px solid $white
+
+.levels__numbers
+	display: grid
+	grid-template-columns: repeat(4, 1fr);
+	.levels__numbers-blocks
+		padding: 10px
+		background: red
