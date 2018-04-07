@@ -22,11 +22,10 @@ a {
   width: 100%;
   height: 42px;
   background: #180606;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  /* Landscape phones and portrait tablets */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .header__stripe {
     display: none;
   }
@@ -40,6 +39,31 @@ a {
   font-family: "Varela Round", sans-serif;
   color: #969393;
   font-size: 14px;
+  text-indent: 40px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.header__stripe p:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  top: 8px;
+  background: url(../img/mail.png) no-repeat;
+  background-size: 24px 24px;
+}
+
+.header__stripe p::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 0;
+  top: 8px;
+  background: url(../img/phone.png) no-repeat;
+  background-size: 24px 24px;
 }
 
 .header__stripe .header__stripe-search {
@@ -65,14 +89,47 @@ a {
   background: url(../img/logo.jpg);
   background-size: cover;
   color: transparent;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  position: relative;
+  /* Landscape phones and portrait tablets */
+  /* Landscape phones and portrait tablets */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .logo {
     grid-column: 1 / 13;
-    margin: 0 auto;
+    margin: 20px;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1170px) {
+  .logo {
+    grid-column: 6/8;
+    width: 160px;
+    height: 85px;
+  }
+}
+
+.menu {
+  width: 50px;
+  height: 50px;
+  background: url(../img/menu.png) center no-repeat;
+  background-size: 32px 32px;
+  position: absolute;
+  top: 20px;
+  left: 90vw;
+  /* Landscape phones and portrait tablets */
+  /* Landscape phones and portrait tablets */
+}
+
+@media only screen and (max-width: 800px) {
+  .menu {
+    left: 82vw;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .menu {
+    display: none;
   }
 }
 
@@ -85,13 +142,24 @@ a {
 .header__nav .navigation {
   padding: 10px 0px 10px 0px;
   grid-column: 4 / 13;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  /* Landscape phones and portrait tablets */
+  /* Landscape phones and portrait tablets */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .header__nav .navigation {
     grid-row: 2;
+    grid-column: 1 / 13;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1170px) {
+  .header__nav .navigation {
+    padding: 10px 0 60px 0;
+    margin: 0 auto;
+    grid-row: 3;
     grid-column: 1 / 13;
   }
 }
@@ -99,8 +167,10 @@ a {
 .header__nav .navigation li {
   padding: 0px 5px 0px 5px;
   margin: 0px;
+  position: relative;
   display: inline-block;
   border-left: 1px solid black;
+  /* Landscape phones and portrait tablets */
 }
 
 .header__nav .navigation li:first-child {
@@ -111,6 +181,34 @@ a {
   background: #63b695;
   border: 0px;
   padding: 11px;
+  /* Landscape phones and portrait tablets */
+  /* Landscape phones and portrait tablets */
+}
+
+@media only screen and (max-width: 800px) {
+  .header__nav .navigation li:last-child {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    margin: 15px 0 0 0;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1170px) {
+  .header__nav .navigation li:last-child {
+    width: 250px;
+    position: absolute;
+    left: 37%;
+    top: 217px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header__nav .navigation li {
+    width: 100%;
+    border: 0;
+    padding: 15px 0 0 0;
+    margin: 0 auto;
+  }
 }
 
 .header__nav .navigation li a {
@@ -131,6 +229,7 @@ a {
 .header__nav .navigation li .donate {
   color: #ffffff;
   font-weight: bold;
+  /* Landscape phones and portrait tablets */
 }
 
 .front {
@@ -139,8 +238,7 @@ a {
   background: url(../img/children.jpg) center no-repeat;
   background-size: cover;
   position: relative;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  /* Landscape phones and portrait tablets */
 }
 
 .front:before {
@@ -151,19 +249,18 @@ a {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  /* Landscape phones and portrait tablets */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .front:before {
-    height: 50vh;
+    height: 90vh;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .front {
-    height: 50vh;
+    height: 90vh;
   }
 }
 
@@ -182,16 +279,8 @@ a {
   text-transform: uppercase;
   font-family: "Varela Round", sans-serif;
   font-weight: bold;
-  width: 10%;
+  width: 250px;
   background: #ffffff;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
-}
-
-@media only screen and (max-width: 600px) {
-  .front .front__text p {
-    width: 60%;
-  }
 }
 
 .front .front__text h1 {
@@ -201,30 +290,28 @@ a {
   font-weight: bold;
   color: #ffffff;
   font-size: 6em;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  /* Landscape phones and portrait tablets */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .front .front__text h1 {
     font-size: 2em;
   }
 }
 
 .front .front__text h2 {
-  margin: 0px 0px 100px 0px;
+  margin: 0px 0px 70px 0px;
   font-size: 1.5em;
   text-transform: uppercase;
   font-family: "Varela Round", sans-serif;
   color: #ffffff;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
+  /* Landscape phones and portrait tablets */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .front .front__text h2 {
     font-size: 0.8em;
-    margin: 0px 0px 50px 0px;
+    margin: 0px 0px 30px 0px;
   }
 }
 
@@ -233,14 +320,6 @@ a {
   font-family: "Varela Round", sans-serif;
   padding: 10px;
   margin: 0 auto;
-  width: 5%;
+  width: 150px;
   background: #63b695;
-  /* Iphone 5 */
-  /* Portrait phones and smaller */
-}
-
-@media only screen and (max-width: 600px) {
-  .front .front__text a {
-    width: 40%;
-  }
 }
