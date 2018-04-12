@@ -301,7 +301,6 @@ a
 
 .levels
 	width: 100%
-
 	background: $lightgrey
 
 .levels__types
@@ -406,7 +405,7 @@ a
 //			CAUSES
 //------------------------
 
-.causes__wrapper
+.causes__wrapper, .news__wrapper
 	margin: 20px 0 20px 0
 	display: grid
 	grid-gap: 20px
@@ -415,7 +414,7 @@ a
 		grid-template-columns: 1fr
 	@include respond-to(ipad)
 		grid-template-columns: repeat(3, 1fr)
-	.causes__title
+	.causes__title, .news__title
 		grid-column: 1 / 4
 		background: $lightgrey
 		border-left: 10px solid $green
@@ -430,7 +429,7 @@ a
 			text-transform: uppercase
 			color: $green
 
-	.causes__slider
+	.causes__slider, .news__slider
 		padding: 20px 10px 20px 10px
 		grid-row: 1
 		float: right
@@ -538,49 +537,59 @@ a
 			font-family: $font
 			color: $white
 			font-size: 4em
+			@include respond-to(large)
+				font-size: 2em
 
 	.events__wrapper-numbers
 		grid-column: 3 / 11
 		display: grid
 		grid-gap: 15px
 		grid-template-columns: repeat(4, 1fr)
+		@include respond-to(large)
+			grid-template-columns: repeat(2, 1fr)
+			grid-column: 1 / 13
 		.events__wrapper-numbersInner
 			border: 1px solid $white
 			text-align: center
 			position: relative
+			@include respond-to(large)
+				padding: 10px
 			h1
 				font-family: $font
 				color: $white
 				text-transform: uppercase
 				font-size: 3em
+				margin: 20px
 			p
-				position: absolute
-				margin: 0
+				margin: 10px
 				padding: 0
 				color: $white
 				font-family: $font
-				top: 145px
-				left: 50px
 
 	.events__wrapper-text
 		margin: 100px 0 0 0
 		grid-row: 3
 		grid-column: 4 / 10
+		@include respond-to(large)
+			margin: 50px 0 0 0
 		h3
 			font-family: $font
 			color: $white
 			text-align: center
 			text-transform: uppercase
-		p
-			position: relative
-			top: -15px
-			font-family: $font
-			width: 24%
-			margin: 0 auto
-			display: inline-block
+
+		.events__wrapper-textInner
+			display: grid
+			grid-template-columns: repeat(3,1fr)
 			text-align: center
-			color: $white
-			padding: 20px
+			@include respond-to(large)
+				grid-template-columns: 1fr
+			p
+				font-family: $font
+				color: $white
+				padding: 20px
+				@include respond-to(large)
+					padding: 5px
 		a
 			font-family: $font
 			text-transform: uppercase
@@ -593,3 +602,221 @@ a
 			text-align: center
 			background: $green
 
+//------------------------
+//			VOLUNTEER
+//------------------------
+
+.volunteer__wrapper
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	margin: 20px 0 20px 0
+	grid-gap: 20px
+	@include respond-to(large)
+		grid-template-columns: 1fr
+
+.volunteer__title
+	background: $lightgrey
+	border-left: 10px solid $green
+	padding: 5px 0 5px 0
+	h3
+		text-indent: 20px
+		font-family: $font
+		text-transform: uppercase
+		color: $green
+
+.volunteer__video-wrapper
+	// background: $lightgrey
+
+.volunteer__video
+	margin: 30px 0 0 0
+	height: 370px
+
+	h4
+		font-family: $font
+		text-transform: uppercase
+		margin: 10px
+		padding: 10px
+		float: left
+		@include respond-to(large)
+			font-size: 12px
+	a
+		background: $green
+		font-family: $font
+		text-transform: uppercase
+		float: right
+		margin: 10px 10px 0 0
+		padding: 10px 20px 10px 20px
+		color: $white
+		@include respond-to(large)
+			font-size: 12px
+.volunteer__text
+	margin: 30px 0 0 0
+	height: 370px
+	font-family: $font
+	// background: $lightgrey
+	padding: 40px 40px 0 40px
+	text-align: center
+	img
+		width: 150px
+		height: 150px
+		border-radius: 100px
+		display: block
+		margin: 0 auto
+	p
+		color: $grey
+	h3,h4
+		margin: 0
+	h4
+		margin: 10px 0 0 0
+		color: $grey
+
+//------------------------
+//			DONATION
+//------------------------
+
+.donation
+	padding: 50px 0 50px 0 
+	width: 100%
+	height: 300px
+	background: url(../img/people-1.jpg) center no-repeat
+	position: relative
+	@include respond-to(large)
+		// margin: 10px 0 0 0 
+		height: 370px
+		padding: 0
+	@include respond-to(ipad)
+		height: 390px
+	&:before
+		position: absolute
+		content: ""
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba(24, 168, 45, .4)
+
+	.donation__wrapper
+		color: $white
+		position: relative
+		z-index: 1
+		background: rgba(255,255,255, .2)
+		padding: 20px
+		font-family: $font
+		width: 99%
+		height: 300px
+		@include respond-to(large)
+			padding: 20px 0 20px 0
+			margin: 0
+			width: 100%
+			font-size: 10px
+			height: 350px
+		@include respond-to(ipad)
+			width: 96.3%
+			height: 390px
+		h1
+			text-align: center
+			text-transform: uppercase
+			@include respond-to(large)
+				font-size: 2em
+				margin: 0
+				padding: 0
+		#make_donation
+			ul
+				padding: 0
+				margin: 0
+				@include respond-to(large)
+					padding: 10px
+				li
+					width: 48%
+					margin: 10px
+					float: left
+					@include respond-to(large)
+						width: 100%
+						margin: 10px 0 10px 0
+					@include respond-to(ipad)
+						width: 100%
+						margin: 10px 0 10px 0
+					.name, .email, .todonate
+						margin: 15px 0 0px 0
+						width: 100%
+						background: transparent
+						border: 1px solid $white
+						color: $white
+						padding: 10px 0 10px 0
+						text-indent: 20px
+						font-family: $font
+						&::-webkit-input-placeholder
+							color: $lightgrey
+							text-indent: 20px
+							text-transform: uppercase
+							font-family: $font
+
+					&:nth-child(3)
+						width: 100%
+					&:last-child
+						width: 98%
+					a
+						margin: 0 auto
+						width: 200px
+						display: block
+						text-align: center
+						padding: 10px
+						color: $white
+						text-transform: uppercase
+						background: $green
+			.todonate
+				width: 97.7% !important
+				@include respond-to(large)
+					width: 100% !important
+				@include respond-to(ipad)
+					width: 100% !important
+
+//------------------------
+//			NEWS
+//------------------------
+
+.news__blocks
+	font-family: $font
+	background: $lightgrey
+	border: 1px solid #D4D3D3
+	img
+		width: 100%
+	
+	h3, p
+		margin: 0
+		padding: 15px 20px 10px 20px
+	
+	p
+		color: $grey
+
+	a
+		font-size: 12px
+		color: black
+		font-weight: bold
+		text-transform: uppercase
+		margin: 15px 30px 15px 30px
+		text-align: center
+		width: 85px
+		display: block
+		float: right
+		border-bottom: 1px solid black
+
+//------------------------
+//			DONATION
+//------------------------
+
+.footer
+	margin: 0
+	padding: 0
+	background: #524F4F
+	font-family: $font
+.footer__wrapper
+	padding: 20px 0 20px 0
+	grid-gap: 10px
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	.footer__logo
+		p
+			padding: 20px 0 20px 0
+			color: $grey
+			border-bottom: 1px solid $grey
