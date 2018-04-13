@@ -139,6 +139,7 @@ a
 		background: #524F4F
 		border: 0px
 		float: right
+		color: $grey
 	&:before
 		content: ""
 		display: block
@@ -179,7 +180,6 @@ a
 	grid-template-columns: repeat(12, 1fr)
 
 	.navigation
-		// width: 90%
 		padding: 10px 0px 10px 0px
 		grid-column: 4 / 13
 		@include respond-to(large)
@@ -370,6 +370,8 @@ a
 
 .levels__numbers
 	display: grid
+	position: relative
+	top: -40px
 	grid-template-columns: repeat(4, 1fr);
 	@include respond-to(large)
 		grid-template-columns: 1fr;
@@ -377,7 +379,7 @@ a
 		padding: 10px
 		img
 			position: relative
-			top: -20px
+			top: -30px
 			display: block
 			width: 64px
 			height: 64px
@@ -565,6 +567,7 @@ a
 				padding: 0
 				color: $white
 				font-family: $font
+				position: relative
 
 	.events__wrapper-text
 		margin: 100px 0 0 0
@@ -584,10 +587,44 @@ a
 			text-align: center
 			@include respond-to(large)
 				grid-template-columns: 1fr
+
 			p
 				font-family: $font
 				color: $white
 				padding: 20px
+				position: relative
+				text-align: left
+				text-indent: 20px
+				&:nth-child(1)
+					&:before
+						content: ""
+						display: block
+						left: 0px
+						width: 24px
+						height: 24px
+						background: url(../img/admin.svg)center no-repeat
+						background-size: cover
+						position: absolute
+				&:nth-child(2)
+					&:before
+						content: ""
+						display: block
+						left: 0px
+						width: 24px
+						height: 24px
+						background: url(../img/map.svg)center no-repeat
+						background-size: cover
+						position: absolute
+				&:nth-child(3)
+					&:before
+						content: ""
+						display: block
+						left: 0px
+						width: 24px
+						height: 24px
+						background: url(../img/world.svg)center no-repeat
+						background-size: cover
+						position: absolute
 				@include respond-to(large)
 					padding: 5px
 		a
@@ -625,12 +662,10 @@ a
 		color: $green
 
 .volunteer__video-wrapper
-	// background: $lightgrey
 
 .volunteer__video
 	margin: 30px 0 0 0
 	height: 370px
-
 	h4
 		font-family: $font
 		text-transform: uppercase
@@ -675,7 +710,7 @@ a
 //------------------------
 
 .donation
-	padding: 50px 0 50px 0 
+	padding: 50px 0 90px 0 
 	width: 100%
 	height: 300px
 	background: url(../img/people-1.jpg) center no-repeat
@@ -811,12 +846,109 @@ a
 	background: #524F4F
 	font-family: $font
 .footer__wrapper
-	padding: 20px 0 20px 0
-	grid-gap: 10px
+	padding: 20px 0px 20px 0px
+	grid-gap: 30px
 	display: grid
 	grid-template-columns: repeat(4, 1fr)
+	@include respond-to(large)
+		grid-template-columns: repeat(1, 1fr)
+		grid-gap: 0px
+	h1
+		@include respond-to(large)
+			margin: 0 auto
+	h3
+		color: $white
+		margin: 40px 0 40px 0
+		@include respond-to(large)
+			text-align: center
 	.footer__logo
 		p
 			padding: 20px 0 20px 0
 			color: $grey
 			border-bottom: 1px solid $grey
+			@include respond-to(large)
+				padding: 20px
+				text-align: center
+	.footer__tags
+		ul
+			padding: 0
+			li
+				float: left
+				@include respond-to(large)
+					margin: 0 auto
+					width: 50%
+				a
+					margin: 5px
+					padding: 10px
+					background: $grey
+					color: $lightgrey
+	.footer__post
+		ul
+			width: 100%
+			padding: 0
+			li
+				padding: 10px
+				border-bottom: 1px solid $grey
+				a
+					color: $grey
+					text-indent: 20px
+					@include respond-to(large)
+
+
+	.footer__contact
+		ul
+			width: 100%
+			padding: 0
+			li
+				padding: 10px
+				a
+					color: $grey
+					text-indent: 20px
+					@include respond-to(large)
+						text-align: center
+						text-indent: 0
+.copyright
+	background: #292727
+	.copyright__wrapper
+		width: 100%
+		display: grid
+		grid-template-columns: repeat(12,1fr)
+		@include respond-to(large)
+			grid-template-columns: repeat(1,1fr)
+		.logo
+			@include respond-to(large)
+				margin: 0 auto
+				display: block
+		p
+			font-family: $font
+			color: $grey
+			padding: 10px
+			grid-column: 1 / 6
+			@include respond-to(large)
+				padding: 20px
+				text-align: center
+		ul
+			grid-column: 10 / 13
+			@include respond-to(large)
+				margin: 0 auto
+				padding: 10px
+				grid-row: 2
+				grid-column: 1 / 13
+			@include respond-to(ipad)
+				grid-column: 9 / 13
+			li
+				width: 32px
+				height: 32px
+				border-radius: 5px
+				background: url(../img/social.png)no-repeat
+				display: inline-block
+			.sn1
+				background-position: 0px 0px
+			.sn2
+				background-position: -39px 0px
+			.sn3
+				background-position: -77px 0px
+			.sn4
+				background-position: -115px 0px
+			.sn5
+				background-position: -151px 0px
